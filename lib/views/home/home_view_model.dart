@@ -5,7 +5,6 @@ import 'package:marketing_website/views/home/home_view.dart';
 import 'package:stacked/stacked.dart';
 
 class HomeViewModel extends BaseViewModel {
-   
   HomeViewModel() {
     loadItems();
   }
@@ -26,10 +25,6 @@ class HomeViewModel extends BaseViewModel {
 
   onPageChange(String e) {
     switch (e) {
-      case "Home":
-        Get.toNamed(HomeView.routeName);
-
-        break;
       case "About":
         Get.toNamed(AboutView.routeName);
 
@@ -43,12 +38,9 @@ class HomeViewModel extends BaseViewModel {
     // if()
   }
 
-  void signUpTap() {
-  }
+  void signUpTap() {}
 
-  void loginTap() {
-  }
+  void loginTap() {}
 
-  void openHeaderMenu() {
-  }
+  void openHeaderMenu() {}
 }

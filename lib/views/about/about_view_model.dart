@@ -1,10 +1,15 @@
+import 'package:get/get.dart';
 import 'package:stacked/stacked.dart';
 
+import '../contact/contact_view.dart';
+import '../home/home_view.dart';
+import 'about_view.dart';
+
 class AboutViewModel extends BaseViewModel {
-  AboutViewModel(){
+  AboutViewModel() {
     loadItems();
   }
-  
+
   // Add ViewModel specific code here
   Future<void> loadItems() async {
     setBusy(true);
@@ -15,16 +20,24 @@ class AboutViewModel extends BaseViewModel {
     notifyListeners();
   }
 
+  void onPageChange(String e) {
+    switch (e) {
+      case "Home":
+        Get.toNamed(HomeView.routeName);
 
-  void onPageChange(String value) {
+        break;
+
+      case "Contact":
+        Get.toNamed(ContactView.routeName);
+
+        break;
+      default:
+    }
   }
 
-  void loginTap() {
-  }
+  void loginTap() {}
 
-  void signUpTap() {
-  }
+  void signUpTap() {}
 
-  void signUpHanler() {
-  }
+  void signUpHanler() {}
 }

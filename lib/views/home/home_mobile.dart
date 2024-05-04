@@ -622,7 +622,7 @@ class _HomeMobileState extends State<_HomeMobile> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: ['Home', 'About', 'Feature', 'Contact']
                       .map((e) => ListTile(
-                            onTap: () {},
+                            onTap: ()=>widget.viewModel.onPageChange(e),
                             // padding: EdgeInsets.only(left: context.width * 0.045),
                             title: Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 10),

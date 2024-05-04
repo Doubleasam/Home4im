@@ -1,16 +1,24 @@
 part of 'about_view.dart';
 
 // ignore: must_be_immutable
-class _AboutMobile extends StatelessWidget {
+class _AboutMobile extends StatefulWidget {
   final AboutViewModel viewModel;
 
   const _AboutMobile(this.viewModel);
 
   @override
+  State<_AboutMobile> createState() => _AboutMobileState();
+}
+
+class _AboutMobileState extends State<_AboutMobile> {
+  var header = true;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF5F7FA),
-      appBar: const HeaderComponent(),
+      appBar: PreferredSize(
+        preferredSize: Size(double.infinity, header ? 60 : 360),
+        child: appBar(context),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -250,6 +258,87 @@ class _AboutMobile extends StatelessWidget {
             const FooterComponent(),
           ],
         ),
+      ),
+    );
+  }
+
+  AppBar appBar(BuildContext context) {
+    return AppBar(
+      leading: const SizedBox(),
+      backgroundColor: header ? const Color(0xffF5F7FA) : Colors.grey.shade200,
+      flexibleSpace: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          !header ? const SizedBox(height: 10) : const SizedBox(height: 4),
+          Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 6),
+                  height: 50,
+                  width: 50,
+                  child: const Image(
+                    image: AssetImage('assets/images/logo.png'),
+                  ),
+                ),
+                IconButton(
+                    onPressed: () {
+                      header = !header;
+                      setState(() {});
+                    },
+                    icon: const Icon(Icons.menu, size: 28)),
+              ],
+            ),
+          ),
+          if (!header)
+            Column(
+              children: [
+                const Gap(20),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: ['Home', 'About', 'Feature', 'Contact']
+                      .map((e) => ListTile(
+                            onTap: () => widget.viewModel.onPageChange(e),
+                            // padding: EdgeInsets.only(left: context.width * 0.045),
+                            title: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 10),
+                              child: Text(e, style: context.textTheme.bodyLarge),
+                            ),
+                          ))
+                      .toList(),
+                ),
+                const Gap(10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        flex: 6,
+                        child: SimpleButton(height: 48, onPressed: () {}, text: 'Sign up'),
+                      ),
+                      const Gap(10),
+                      Expanded(
+                        flex: 6,
+                        child: SimpleButton(
+                          height: 48,
+                          onPressed: () {},
+                          text: 'Login',
+                          backgroundColor: Colors.grey.shade300,
+                          textColor: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+        ],
       ),
     );
   }
