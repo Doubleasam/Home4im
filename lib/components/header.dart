@@ -85,14 +85,21 @@ class _HeaderComponentState extends State<HeaderComponent> {
                           children: <Widget>[
                             Expanded(
                               flex: 6,
-                              child: SimpleButton(height: 48, onPressed: () {}, text: 'Sign up'),
+                              child: SimpleButton(
+                                  height: 48,
+                                  onPressed: () {
+                                    Get.toNamed(ContactView.routeName);
+                                  },
+                                  text: 'Sign up'),
                             ),
                             const Gap(10),
                             Expanded(
                               flex: 6,
                               child: SimpleButton(
                                 height: 48,
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.toNamed(ContactView.routeName);
+                                },
                                 text: 'Login',
                                 backgroundColor: Colors.grey.shade300,
                                 textColor: Colors.black,
@@ -151,13 +158,21 @@ class _HeaderComponentState extends State<HeaderComponent> {
                     SimpleButton(
                       width: 110,
                       height: 48,
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(ContactView.routeName);
+                      },
                       text: 'Login',
                       backgroundColor: Colors.transparent,
                       textColor: Colors.black,
                     ),
                     Gap(10),
-                    SimpleButton(width: 115, height: 48, onPressed: () {}, text: 'Sign up'),
+                    SimpleButton(
+                        width: 115,
+                        height: 48,
+                        onPressed: () {
+                          Get.toNamed(ContactView.routeName);
+                        },
+                        text: 'Sign up'),
                   ],
                 )
               ],
