@@ -1,15 +1,13 @@
-part of contact_view;
+part of 'coming_soon_view.dart';
 
 // ignore: must_be_immutable
-class _ContactTablet extends StatelessWidget {
-  final ContactViewModel viewModel;
+class __ComingSoonTablet extends StatelessWidget {
+  final ComingSoonViewModel viewModel;
 
-  const _ContactTablet(this.viewModel);
+  const __ComingSoonTablet(this.viewModel);
 
   @override
   Widget build(BuildContext context) {
-        String selectedOption = 'Option 1'; // Initial selected value
-
     return SelectionArea(
       child: Scaffold(
         appBar: const HeaderComponent(),
@@ -44,55 +42,21 @@ class _ContactTablet extends StatelessWidget {
                                 topLeft: Radius.circular(20),
                                 topRight: Radius.circular(20))),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'Contact Us',
+                              'Coming Soon',
                               style: context.textTheme.headlineLarge?.copyWith(
                                   fontSize: 48,
                                   fontWeight: FontWeight.w900,
                                   color: Colors.white),
                             ),
+                            const Gap(10),
                             Text(
-                              'Any question or remarks? \nJust write us a message!',
+                              'Want to be one of the first set of individuals to know when we launch? Join our wait list for our launching update.',
                               style: context.textTheme.bodyLarge
                                   ?.copyWith(fontSize: 16, color: Colors.white),
-                            ),
-                            const Gap(30),
-                            Column(
-                              children: <Widget>[
-                                ListTile(
-                                  leading: const Icon(Icons.phone,
-                                      color: Colors.white),
-                                  title: Text(
-                                    '+1343 5989723',
-                                    style: context.textTheme.bodyLarge?.copyWith(
-                                        fontSize: 14, color: Colors.white),
-                                  ),
-                                ),
-                                const Gap(10),
-                                ListTile(
-                                  leading: const Icon(Icons.email,
-                                      color: Colors.white),
-                                  title: Text(
-                                    'admin@home4im.com',
-                                    style: context.textTheme.bodyLarge?.copyWith(
-                                        fontSize: 14, color: Colors.white),
-                                  ),
-                                ),
-                                const Gap(10),
-                                ListTile(
-                                  leading: const Icon(Icons.location_on_sharp,
-                                      color: Colors.white),
-                                  title: Text(
-                                    '132 Dartmouth Street Boston, Massachusetts 02156 United States',
-                                    style: context.textTheme.bodyLarge?.copyWith(
-                                        fontSize: 14, color: Colors.white),
-                                  ),
-                                ),
-                                const Gap(10),
-                              ],
                             ),
                             // const Gap(150),
                           ],
@@ -163,78 +127,12 @@ class _ContactTablet extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
-                                  child: TextFormField(
-                                    decoration: InputDecoration(
-                                      labelText: 'Phone Number ',
-                                      labelStyle: context.textTheme.bodyLarge,
-                                      border: InputBorder.none,
-                                      enabledBorder: const UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                            width: 1, color: Colors.grey),
-                                      ),
-                                      focusedBorder: const UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                            width: 1, color: Colors.blue),
-                                      ),
-                                    ),
-                                  ),
-                                )
+                               
                               ],
                             ),
                             const Gap(30),
-                            Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 28.0, horizontal: 0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text(
-                                      'Select Subject?',
-                                      style:
-                                          context.textTheme.bodyLarge?.copyWith(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w900,
-                                      ),
-                                    ),
-                                    const Gap(20),
-                                    Container(
-                                      child: RadioButtonList(
-      texts: ['General enquiry', 'Option 2', 'Option 3', 'Option 4'],
-      onChanged: (value) {
-        selectedOption = value; // Update the selected value
-      },
-      groupValue: selectedOption,
-    )
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            const Gap(10),
-                            Container(
-                              padding: const EdgeInsets.only(right: 20),
-                              child: TextFormField(
-                                decoration: InputDecoration(
-                                  labelText: 'Message',
-                                  labelStyle: context.textTheme.bodyLarge,
-                                  border: InputBorder.none,
-                                  hintText: 'Write your message..',
-                                  enabledBorder: const UnderlineInputBorder(
-                                    borderSide:
-                                        BorderSide(width: 1, color: Colors.grey),
-                                  ),
-                                  focusedBorder: const UnderlineInputBorder(
-                                    borderSide:
-                                        BorderSide(width: 1, color: Colors.blue),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const Gap(10),
+                            
+                            
                             Align(
                               heightFactor: 2.2,
                               alignment: Alignment.bottomRight,
@@ -242,7 +140,7 @@ class _ContactTablet extends StatelessWidget {
                                 padding: const EdgeInsets.only(right: 20),
                                 child: SimpleButton(
                                   onPressed: () {},
-                                  text: 'Send Message',
+                                  text: 'Join Wait list',
                                   width: 200,
                                 ),
                               ),

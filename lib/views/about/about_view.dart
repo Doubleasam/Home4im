@@ -1,9 +1,6 @@
 library about_view;
 
-import 'dart:js';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:marketing_website/components/header.dart';
@@ -22,6 +19,8 @@ part 'about_desktop.dart';
 // ignore: must_be_immutable
 class AboutView extends StatelessWidget {
   static const routeName = '/about';
+
+  const AboutView({super.key});
 
   @override
   Widget build(BuildContext context) {
