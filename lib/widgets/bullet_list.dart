@@ -35,7 +35,6 @@ class BulletListItem extends StatelessWidget {
             text,
             style: context.textTheme.bodyLarge
                 ?.copyWith(color: const Color(0xff717171)),
-            maxLines: 1,
           ),
         ),
       ],

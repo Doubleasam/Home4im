@@ -70,8 +70,8 @@ class _PrivacyPolicyMobileState extends State<_PrivacyPolicyMobile> {
                           const Gap(10),
                           const BulletList([
                             "Account Information: We collect information such as your name, email address, and password when you create an account.",
-                            "Profile Information: You may choose to provide additional information such as your location, language, and immigration status."
-                                "Activity Information: We collect information about your activity on the app, including posts, comments, and interactions with others."
+                            "Profile Information: You may choose to provide additional information such as your location, language, and immigration status.",
+                                "Activity Information: We collect information about your activity on the app, including posts, comments, and interactions with others.",
                                 "Device Information: We collect information about your device, including operating system, device type, and IP address."
                           ]),
                           const Gap(40),
@@ -84,9 +84,9 @@ class _PrivacyPolicyMobileState extends State<_PrivacyPolicyMobile> {
                           const Gap(10),
                           const BulletList([
                             "Provide and improve our services",
-                            "Connect you with other users and resources"
-                                "Personalize your experience"
-                                "Send notifications and updates"
+                            "Connect you with other users and resources",
+                                "Personalize your experience",
+                                "Send notifications and updates",
                                 "Analyze usage and improve the app"
                           ]),
                           const Gap(40),
@@ -99,8 +99,8 @@ class _PrivacyPolicyMobileState extends State<_PrivacyPolicyMobile> {
                           const Gap(10),
                           const BulletList([
                             "We do not share your information with third parties except in the following cases:",
-                            "With your consent"
-                                "To comply with legal obligations"
+                            "With your consent",
+                                "To comply with legal obligations",
                                 "To protect the rights and safety of our users and others"
                           ]),
                           const Gap(40),
@@ -112,7 +112,7 @@ class _PrivacyPolicyMobileState extends State<_PrivacyPolicyMobile> {
                           ),
                           const Gap(10),
                           const BulletList([
-                            "We implement security measures to protect your information from unauthorized access, disclosure, and use."
+                            "We implement security measures to protect your information from unauthorized access, disclosure, and use.",
                                 "We use encryption and secure servers to protect your data."
                           ]),
                           const Gap(40),
@@ -124,7 +124,7 @@ class _PrivacyPolicyMobileState extends State<_PrivacyPolicyMobile> {
                           ),
                           const Gap(10),
                           const BulletList([
-                            "We retain your information for as long as you have an account or as needed to provide services."
+                            "We retain your information for as long as you have an account or as needed to provide services.",
                                 "We delete your information upon request or when it is no longer necessary."
                           ]),
                           const Gap(40),
@@ -136,9 +136,9 @@ class _PrivacyPolicyMobileState extends State<_PrivacyPolicyMobile> {
                           ),
                           const Gap(10),
                           const BulletList([
-                            "Access and correct your information"
-                                "Delete your information"
-                                "Object to processing"
+                            "Access and correct your information",
+                                "Delete your information",
+                                "Object to processing",
                                 "Lodge a complaint with a supervisory authority"
                           ]),
                           const Gap(40),
@@ -150,7 +150,7 @@ class _PrivacyPolicyMobileState extends State<_PrivacyPolicyMobile> {
                           ),
                           const Gap(10),
                           const BulletList([
-                            "We may update this policy from time to time."
+                            "We may update this policy from time to time.",
                                 "We will notify you of significant changes."
                           ]),
                           const Gap(40),
