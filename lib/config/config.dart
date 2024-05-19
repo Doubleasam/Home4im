@@ -6,7 +6,7 @@ import '../controller/main_controller.dart';
 ApiRepo apiRepo = ApiRepo.instance;
 // MainController mainController = MainController.instance;
 
-const String APP_NAME = "Test APP";
+const String APP_NAME = "HOME 4IM";
 const String API_KEY = "21960663-cb5469eaeadafe2e3b658e89e";
 const String URL_PRODUCTION = "https://pixabay.com/api/?key=$API_KEY";
 const String URL_DEV = "https://pixabay.com/api/?key=$API_KEY";

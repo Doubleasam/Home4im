@@ -1,10 +1,6 @@
 library contact_view;
 
-import 'dart:js';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:marketing_website/components/footer.dart';
@@ -13,6 +9,7 @@ import 'package:marketing_website/widgets/simple_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:flutter/material.dart';
+import '../../widgets/radio_button_list.dart';
 import 'contact_view_model.dart';
 
 part 'contact_mobile.dart';
@@ -22,6 +19,8 @@ part 'contact_desktop.dart';
 // ignore: must_be_immutable
 class ContactView extends StatelessWidget {
   static const routeName = '/contact';
+
+  const ContactView({super.key});
 
   @override
   Widget build(BuildContext context) {

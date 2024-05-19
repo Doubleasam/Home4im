@@ -1,4 +1,10 @@
+import 'package:get/get.dart';
+import 'package:marketing_website/views/coming%20soon/coming_soon_view.dart';
+import 'package:marketing_website/views/home/home_view.dart';
+import 'package:marketing_website/views/privacy/privacy_policy_view.dart';
 import 'package:stacked/stacked.dart';
+
+import '../about/about_view.dart';
 
 class ContactViewModel extends BaseViewModel {
   List subjects = ['General Inquiry', 'General Inquiry', 'General Inquiry', 'General Inquiry'];
@@ -18,7 +24,27 @@ class ContactViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void onPageChange(String value) {}
+  void onPageChange(String e) {
+    switch (e) {
+      case "Home":
+        Get.toNamed(HomeView.routeName);
+
+        break;
+      case "About":
+        Get.toNamed(AboutView.routeName);
+
+        break;
+      case "Privacy Policy":
+        Get.toNamed(PrivacyPolicyView.routeName);
+
+        break;
+      case "Coming Soon":
+        Get.toNamed(ComingSoonView.routeName);
+
+        break;
+      default:
+    }
+  }
 
   void loginTap() {}
 

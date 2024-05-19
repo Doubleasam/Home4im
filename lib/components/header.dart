@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:marketing_website/views/home/home_view.dart';
+import 'package:marketing_website/views/privacy/privacy_policy_view.dart';
 import 'package:marketing_website/widgets/simple_button.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../views/about/about_view.dart';
+import '../views/coming soon/coming_soon_view.dart';
 import '../views/contact/contact_view.dart';
 
 class HeaderComponent extends StatefulWidget implements PreferredSizeWidget {
@@ -28,10 +30,11 @@ class _HeaderComponentState extends State<HeaderComponent> {
     return ScreenTypeLayout.builder(
       mobile: (p0) {
         return PreferredSize(
-          preferredSize: Size(double.infinity, header ? 74 : 360),
+          preferredSize: Size(double.infinity, header ? 74 : 430),
           child: AppBar(
             leading: const SizedBox(),
-            backgroundColor: header ? const Color(0xffF5F7FA) : Colors.grey.shade200,
+            backgroundColor:
+                header ? const Color(0xffF5F7FA) : Colors.grey.shade200,
             flexibleSpace: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +42,8 @@ class _HeaderComponentState extends State<HeaderComponent> {
                 header ? const SizedBox(height: 10) : const SizedBox(height: 4),
                 Container(
                   alignment: Alignment.center,
-                  padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -68,31 +72,47 @@ class _HeaderComponentState extends State<HeaderComponent> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: ['Home', 'About', 'Feature', 'Contact']
+                        children: [
+                          'Home',
+                          'About',
+                          'Feature',
+                          'Contact',
+                          'Privacy Policy',
+                          'Coming Soon'
+                        ]
                             .map((e) => ListTile(
                                   onTap: () => onPageChange(e),
                                   title: Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                                    child: Text(e, style: context.textTheme.bodyLarge),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10),
+                                    child: Text(e,
+                                        style: context.textTheme.bodyLarge),
                                   ),
                                 ))
                             .toList(),
                       ),
-                      const Gap(10),
+                      const Gap(20),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         child: Row(
                           children: <Widget>[
                             Expanded(
                               flex: 6,
-                              child: SimpleButton(height: 48, onPressed: () {}, text: 'Sign up'),
+                              child: SimpleButton(
+                                  height: 48,
+                                  onPressed: () {
+                                    Get.toNamed(ContactView.routeName);
+                                  },
+                                  text: 'Sign up'),
                             ),
                             const Gap(10),
                             Expanded(
                               flex: 6,
                               child: SimpleButton(
                                 height: 48,
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.toNamed(ContactView.routeName);
+                                },
                                 text: 'Login',
                                 backgroundColor: Colors.grey.shade300,
                                 textColor: Colors.black,
@@ -128,9 +148,16 @@ class _HeaderComponentState extends State<HeaderComponent> {
                 ),
                 // const Gap(130),
                 Row(
-                  children: ['Home', 'About', 'Feature', 'Contact']
+                  children: [
+                    'Home',
+                    'About',
+                    'Feature',
+                    'Contact',
+                    'Privacy Policy',
+                    'Coming Soon'
+                  ]
                       .map((e) => Container(
-                            width: context.devicePixelRatio * 58,
+                            width: context.width * 0.09,
                             alignment: Alignment.center,
                             child: ListTile(
                               dense: true,
@@ -151,13 +178,21 @@ class _HeaderComponentState extends State<HeaderComponent> {
                     SimpleButton(
                       width: 110,
                       height: 48,
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(ContactView.routeName);
+                      },
                       text: 'Login',
                       backgroundColor: Colors.transparent,
                       textColor: Colors.black,
                     ),
-                    Gap(10),
-                    SimpleButton(width: 115, height: 48, onPressed: () {}, text: 'Sign up'),
+                    const Gap(10),
+                    SimpleButton(
+                        width: 112,
+                        height: 48,
+                        onPressed: () {
+                          Get.toNamed(ContactView.routeName);
+                        },
+                        text: 'Sign up'),
                   ],
                 )
               ],
@@ -180,6 +215,12 @@ class _HeaderComponentState extends State<HeaderComponent> {
         break;
       case "Contact":
         Get.toNamed(ContactView.routeName);
+
+      case "Privacy Policy":
+        Get.toNamed(PrivacyPolicyView.routeName);
+
+      case "Coming Soon":
+        Get.toNamed(ComingSoonView.routeName);
 
         break;
       default:

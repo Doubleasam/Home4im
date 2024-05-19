@@ -1,11 +1,12 @@
 import 'package:get/get.dart';
 import 'package:marketing_website/views/about/about_view.dart';
 import 'package:marketing_website/views/contact/contact_view.dart';
-import 'package:marketing_website/views/home/home_view.dart';
+import 'package:marketing_website/views/privacy/privacy_policy_view.dart';
 import 'package:stacked/stacked.dart';
 
+import '../coming soon/coming_soon_view.dart';
+
 class HomeViewModel extends BaseViewModel {
-   
   HomeViewModel() {
     loadItems();
   }
@@ -26,10 +27,7 @@ class HomeViewModel extends BaseViewModel {
 
   onPageChange(String e) {
     switch (e) {
-      case "Home":
-        Get.toNamed(HomeView.routeName);
-
-        break;
+  
       case "About":
         Get.toNamed(AboutView.routeName);
 
@@ -38,17 +36,23 @@ class HomeViewModel extends BaseViewModel {
         Get.toNamed(ContactView.routeName);
 
         break;
+
+      case "Privacy Policy":
+        Get.toNamed(PrivacyPolicyView.routeName);
+
+        break;
+      case "Coming Soon":
+        Get.toNamed(ComingSoonView.routeName);
+
+        break;
       default:
     }
     // if()
   }
 
-  void signUpTap() {
-  }
+  void signUpTap() {}
 
-  void loginTap() {
-  }
+  void loginTap() {}
 
-  void openHeaderMenu() {
-  }
+  void openHeaderMenu() {}
 }
